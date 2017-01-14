@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var home = require('./routes/home');
@@ -47,13 +48,15 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-var fortunes = [
-    "Conquer your fears or they will conquer you.",
-  "Rivers need springs.",
-  "Do not fear what yo don't know.",
-  "You will have a pleasant surprise.",
-  "Whenever possible, keep it simple."
-];
-app.set('fortunes', fortunes);
-//module.exports.fortunes = fortunes;
+
+//one way to add variables to be accessible globaly
+// var fortunes = [
+//     "Conquer your fears or they will conquer you.",
+//   "Rivers need springs.",
+//   "Do not fear what yo don't know.",
+//   "You will have a pleasant surprise.",
+//   "Whenever possible, keep it simple."
+// ];
+// app.set('fortunes', fortunes);
+
 module.exports = app;
